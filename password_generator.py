@@ -1,13 +1,11 @@
 import random
 
-# Pour avoir aléatoirement entre 2 et 4 instances de chaque lettre
-lettres_minuscules = 'abcdefghijklmnopqrstuvwxyz' * random.randrange(2, 5)
-lettres_majuscules = list(lettres_minuscules.upper())
-lettres_minuscules = list(lettres_minuscules)
-chiffres = list('0123456789' * random.randrange(2, 5))
-caracteres_speciaux = list("&é'(-è_çà)=~#}{[|`^@]+*/ù:!;,<>$£¤µ" + '"')
+lettres_minuscules = 'abcdefghijklmnopqrstuvwxyz' * random.randrange(2, 5) #--> Pour avoir aléatoirement entre 2 et 4 instances de chaque lettre
+lettres_majuscules = lettres_minuscules.upper()
+chiffres = '0123456789' * random.randrange(2, 5)
+caracteres_speciaux = "&é'(-è_çà)=~#}{[|`^@]+*/ù:!;,<>$£¤µ" + '"'
 
-mdp = lettres_majuscules + lettres_minuscules + caracteres_speciaux + chiffres
+mdp = list(lettres_majuscules + lettres_minuscules + caracteres_speciaux + chiffres)
 random.shuffle(mdp)
 
 taille = random.randrange(8, 15)
